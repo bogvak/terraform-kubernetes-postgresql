@@ -340,3 +340,8 @@ variable "startup_probe_failure" {
   description = "Minimum consecutive failures for the probe to be considered failed after having succeeded"
   default     = 3
 }
+
+variable "automount_service_account_token" {
+  default = true
+  description = "For security reason some of cloud providers are not recommended to enable service account automount - so it could be disabled if needed"
+}

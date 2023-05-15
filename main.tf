@@ -62,9 +62,13 @@ resource "kubernetes_stateful_set" "postgresql" {
             fs_group        = var.security_context_gid
           }
         }
+
+        automount_service_account_token = var.automount_service_account_token
+        
         container {
           image = format("%s:%s", var.image_name, var.image_tag)
           name  = regex("[[:alnum:]]+$", var.image_name)
+
           resources {
             limits = {
               cpu    = var.resources_limits_cpu
