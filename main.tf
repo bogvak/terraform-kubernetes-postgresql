@@ -86,7 +86,7 @@ resource "kubernetes_stateful_set" "postgresql" {
           }
           env {
             name  = "BITNAMI_DEBUG"
-            value = false
+            value = var.bitnami_debug
           }
           env {
             name  = "POSTGRESQL_PORT_NUMBER"
